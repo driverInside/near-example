@@ -24,6 +24,7 @@ const Quotes = {
       .catch(err => {
         console.error(err)
       })
+
     return quotes
   },
 
@@ -45,6 +46,7 @@ const Quotes = {
    */
   random: async () => {
     const quotes = await Quotes.get()
+
     return quotes[getRandomInteger(0, quotes.length)]
   },
 

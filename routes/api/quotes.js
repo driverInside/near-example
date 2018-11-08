@@ -17,6 +17,15 @@ router.get('/', async (ctx, next) => {
   }
 })
 
+router.get('/random', async (ctx, next) => {
+  console.log('random')
+  const quote = await Quotes.random()
+  ctx.body = {
+    success: true,
+    quote
+  }
+})
+
 router.get('/:id', async (ctx, next) => {
   const id = ctx.params.id
 
@@ -28,14 +37,6 @@ router.get('/:id', async (ctx, next) => {
   }
 })
 
-router.get('/random', async (ctx, next) => {
-  const quote = await Quotes.random()
-
-  ctx.body = {
-    success: true,
-    quote
-  }
-})
 
 router.get('/:id/is_funny', async (ctx, next) => {
   const id = ctx.params.id
