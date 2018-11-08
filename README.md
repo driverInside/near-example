@@ -70,3 +70,8 @@ curl --header "Content-Type: application/json" \
   --request GET \
   http://localhost:3100/1/is_funny
 ```
+
+## Create quotes from file
+```
+node loadQuotes.js
+```

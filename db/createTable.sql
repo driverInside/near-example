@@ -1,5 +1,5 @@
 -- create quotes table and db
-DROP DATABASE near;
+DROP DATABASE IF EXISTS near;
 CREATE DATABASE near;
 
 USE near;
@@ -9,4 +9,10 @@ CREATE TABLE IF NOT EXISTS quotes (
     title VARCHAR(100),
     quote VARCHAR(200),
     author VARCHAR(100)
+);
+
+CREATE TABLE IF NOT EXISTS users (
+    id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100),
+    password VARCHAR(100)
 );
